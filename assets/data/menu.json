@@ -1,0 +1,17 @@
+[
+    {
+        "id": "1",
+        "nombre": "Dashboard",
+        "redirect": "/dashboard"
+    },
+    {
+        "id": "2",
+        "nombre": "Usuarios",
+        "redirect": "/dashboard/usuarios"
+    },
+    {
+        "id": "3",
+        "nombre": "Reservas",
+        "redirect": "/dashboard/reservas"
+    }
+]
