@@ -74,6 +74,7 @@ export class UsuariosComponent implements OnInit {
   }
 
   eliminarUsuario(id_usuario: number) {
+    alert("Próximo a implementar");
     // this._usuarioService.eliminarUsuario(id_usuario).subscribe(
     //   (response: Usuario) => {
     //     this.dataSource = new MatTableDataSource<Usuario>(response.id_usuario);

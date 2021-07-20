@@ -1,6 +1,6 @@
 export interface Reserva {
     id_reserva: number,
     fecha_reserva: Date,
-    turno_txt: string,
+    turno: string,
     torre_apto: string
 }

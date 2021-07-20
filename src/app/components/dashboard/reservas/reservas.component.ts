@@ -85,7 +85,7 @@ export class ReservasComponent implements OnInit {
     
 
   eliminarReserva(id_reserva: number) {
-    
+    alert("Próximo a implementar");
   }
 
   // openDialog(): void {

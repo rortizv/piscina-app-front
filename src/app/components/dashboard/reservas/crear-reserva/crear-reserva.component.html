@@ -28,46 +28,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="container">
     <mat-toolbar>
         <span>Crear Reserva</span>
@@ -86,7 +46,7 @@
                 <mat-grid-tile [colspan]="4" [rowspan]="1">
                     <mat-form-field class="ancho">
                         <mat-label>Turno</mat-label>
-                        <mat-select formControlName="turno_txt">
+                        <mat-select formControlName="turno">
                             <mat-option *ngFor="let element of turnos" [value]="element">
                               {{element}}
                             </mat-option>
@@ -95,7 +55,7 @@
                 </mat-grid-tile>                
                 <mat-grid-tile [colspan]="4" [rowspan]="1">
                     <mat-form-field class="ancho">
-                        <mat-label>Propietario</mat-label>
+                        <mat-label>Propietario (Ejemplo: T3 Apto201)</mat-label>
                         <input matInput [min]="minDate" autocomplete="off" formControlName="torre_apto">
                     </mat-form-field>
                 </mat-grid-tile>

@@ -41,7 +41,7 @@ export class AuthService {
 
   getRolenameUser(): boolean {
     const decoded = jwt_decode(this.getToken()) as TokenModel;
-    console.log(decoded);
+    //console.log(decoded);
     return decoded.rolename == "administrador";
   }
 

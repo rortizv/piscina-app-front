@@ -1,17 +1,9 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-//import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-//import { DialogData } from 'src/app/interfaces/DialogData';
 import { Reserva } from 'src/app/interfaces/reserva';
 import { MessageService } from 'src/app/services/message.service';
 import { ReservasService } from 'src/app/services/reservas.service';
-import * as moment from 'moment';
-
-interface Food {
-  value: string;
-  viewValue: string;
-}
 
 @Component({
   selector: 'app-crear-reserva',
@@ -19,12 +11,6 @@ interface Food {
   styleUrls: ['./crear-reserva.component.css']
 })
 export class CrearReservaComponent implements OnInit {
-
-  // foods: Food[] = [
-  //   {value: 'steak-0', viewValue: 'Steak'},
-  //   {value: 'pizza-1', viewValue: 'Pizza'},
-  //   {value: 'tacos-2', viewValue: 'Tacos'}
-  // ];
 
   form: FormGroup;
   
@@ -61,7 +47,7 @@ export class CrearReservaComponent implements OnInit {
     }
     
     agregarReserva() {
-      let valorForm;
+      //let valorForm;
       // if(this.form.get('fecha_reserva')) {
       //   valorForm = this.form.get('fecha_reserva').value;
       // }
