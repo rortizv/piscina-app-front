@@ -27,7 +27,6 @@ export class AuthService {
 
   setToken(token: string): void {
     this.localDataService.setItem({ value: token, key: this.NAME_TOKEN });
-    //TODO variable password
   }
 
   getToken(): string {

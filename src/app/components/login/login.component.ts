@@ -50,6 +50,8 @@ export class LoginComponent implements OnInit {
       (response: any) => {
         //Se ejecuta cuando la respuesta es correcta
         this.authService.setToken(response.success);
+        this.localDataService.setItem({ value: this.form.value.username, key: 'username' });
+        this.localDataService.setItem({ value: this.form.value.password, key: 'password' });
         this.success();
         this.fakeLoading();
         this.router.navigate(['/dashboard']);
