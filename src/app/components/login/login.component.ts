@@ -53,8 +53,6 @@ export class LoginComponent implements OnInit {
         this.success();
         this.fakeLoading();
         this.router.navigate(['/dashboard']);
-        console.log(this.form.value.username);
-        console.log(this.form.value.password);
       },
       (error: any) => {
         //Se ejecuta cuando la respuesta es mayor a 400
