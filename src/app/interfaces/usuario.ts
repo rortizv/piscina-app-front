@@ -1,6 +1,6 @@
 export interface Usuario {
-    username: string,
-    password: string,
-    torre_apto: string,
-    rolename: string
+    username: string;
+    password: string;
+    torre_apto: string;
+    rolename: string;
 }

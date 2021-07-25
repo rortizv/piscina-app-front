@@ -52,7 +52,7 @@ export class CrearUsuarioComponent implements OnInit {
             this.router.navigate(["/dashboard/usuarios"]);
           },
           (error: any) => {
-            this.messageService.showMessage("ERROR AL GUARDAR EL USUARIO");
+            this.messageService.showMessage("USUARIO YA EXISTE O ERROR EN EL GUARDADO");
             this.router.navigate(["/dashboard/usuarios"]);
           }
         );

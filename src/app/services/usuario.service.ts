@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { propietario } from '../interfaces/propietario';
 import { RolesRequestModel } from '../interfaces/RolesRequestModel';
 import { Usuario } from '../interfaces/usuario';
 
@@ -29,6 +30,12 @@ export class UsuarioService {
     const endpoint = `api/usuarios/listar`;
     const url = `${this.API_URL}${endpoint}`;
     return this.http.get<Array<Usuario>>(url, { headers: this.headers });
+  }
+
+  listarPropietarios(): Observable<Array<propietario>> {
+    const endpoint = `api/usuarios/propietarios`;
+    const url = `${this.API_URL}${endpoint}`;
+    return this.http.get<Array<propietario>>(url, { headers: this.headers });
   }
 
   listarUsuarioById(id_usuario: number): Observable<Array<Usuario>> {

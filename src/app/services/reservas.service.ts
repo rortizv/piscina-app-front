@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Reserva } from '../interfaces/reserva';
+import { ReservaIn } from '../interfaces/reservaIn';
 
 @Injectable({
   providedIn: 'root'
@@ -36,10 +37,10 @@ export class ReservasService {
     return this.http.delete<Reserva>(url, { headers: this.headers });
   }
 
-  agregarReserva(reserva: Reserva): Observable<Reserva> {
+  agregarReserva(reserva: ReservaIn): Observable<ReservaIn> {
     const endpoint = `api/reservas/crear-reserva`;
     const url = `${this.API_URL}${endpoint}`;
-    return this.http.post<Reserva>(url, reserva, { headers: this.headers });
+    return this.http.post<ReservaIn>(url, reserva, { headers: this.headers });
   }
 
 }
