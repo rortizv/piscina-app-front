@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 //Módulos
@@ -69,6 +69,9 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatToolbarModule,
     MatTooltipModule,
     ReactiveFormsModule
+  ],
+  providers: [
+    { provide: LOCALE_ID, useValue: 'en-EN' }
   ]
 })
 export class SharedModule { }

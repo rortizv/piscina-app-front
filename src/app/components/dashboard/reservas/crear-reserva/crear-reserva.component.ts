@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import * as moment from 'moment';
-import { parseISO } from 'date-fns'
+import { parseISO } from 'date-fns';
 import { Reserva } from 'src/app/interfaces/reserva';
 import { ReservaIn } from 'src/app/interfaces/reservaIn';
 import { MessageService } from 'src/app/services/message.service';
@@ -18,7 +18,13 @@ import { UsuarioService } from '../../../../services/usuario.service';
 export class CrearReservaComponent implements OnInit {
 
   public form: FormGroup;
-  public minDate: Date = new Date();
+  public minDateLessOne: Date = new Date();
+  public dayMin = 60 * 60 * 24 * 1000;
+  public minDate: Date =  new Date(this.minDateLessOne.getTime()+this.dayMin);
+
+  public maxDatePlus2Weeks: Date = new Date();
+  public dayMax = 14 * 60 * 60 * 24 * 1000;
+  public maxDate: Date =  new Date(this.maxDatePlus2Weeks.getTime()+this.dayMax);
   public reservaModel: Array<Reserva>;
   public propietarios: Array<propietario>;
   public miReserva: ReservaIn;
@@ -32,6 +38,7 @@ export class CrearReservaComponent implements OnInit {
   constructor(
     // public dialogRef: MatDialogRef<any>,
     // @Inject(MAT_DIALOG_DATA) public data: DialogData,
+    
     private _reservaService: ReservasService,
     private _usuarioService: UsuarioService,
     private messageService: MessageService,
@@ -40,7 +47,7 @@ export class CrearReservaComponent implements OnInit {
       this.form = new FormGroup({});
       this.reservaModel = new Array<Reserva>();
       this.propietarios = new Array<propietario>();
-    }
+    }   
     
     ngOnInit(): void {
       this.buildForm();
@@ -61,14 +68,13 @@ export class CrearReservaComponent implements OnInit {
       if(this.form.get('fecha_reserva')) {
         fechaForm = this.form.get('fecha_reserva').value;
       }
-      // console.log(fechaForm);
-      // var fechaFormString = moment(fechaForm).format('YYYY-MM-DDT00:00:00');
-      // console.log(fechaFormDate);
+      console.log(fechaForm);
+      var fechaFormString = moment(fechaForm).format('YYYY-MM-DD');
+      console.log(fechaFormString);
       miTurno = this.form.get('turno').value;
       const miUsername = this.propietarios.find(item => item.torre_apto == this.form.get('torre_apto').value);
-      console.log(miUsername);
       this.miReserva = {
-        fecha_reserva: fechaForm,
+        fecha_reserva: fechaFormString,
         turno: miTurno,
         username: miUsername.username,
       }
