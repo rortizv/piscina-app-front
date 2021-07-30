@@ -1,3 +1,3 @@
 export interface ReservaFilterModel {
-    fecha_reserva: Date;
+    fecha_reserva: string | Date;
 }

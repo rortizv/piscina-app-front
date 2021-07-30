@@ -25,7 +25,7 @@ export class ReservasService {
       .set('Accept', 'application/json');
   }
 
-  listarReservas(filter?: Date): Observable<Array<Reserva>> {
+  listarReservas(filter?: string | Date): Observable<Array<Reserva>> {
     const endpoint = `api/reservas/${filter}`;
     const url = `${this.API_URL}${endpoint}`;
     return this.http.get<Array<Reserva>>(url, { headers: this.headers });
