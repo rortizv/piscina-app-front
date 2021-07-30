@@ -69,7 +69,7 @@ export class CrearReservaComponent implements OnInit {
         fechaForm = this.form.get('fecha_reserva').value;
       }
       console.log(fechaForm);
-      var fechaFormString = moment(fechaForm).format('YYYY-MM-DD');
+      var fechaFormString = moment(fechaForm).format('YYYY-MM-DDT00:00:00');
       console.log(fechaFormString);
       miTurno = this.form.get('turno').value;
       const miUsername = this.propietarios.find(item => item.torre_apto == this.form.get('torre_apto').value);

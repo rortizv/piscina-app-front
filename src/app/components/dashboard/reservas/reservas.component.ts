@@ -49,11 +49,9 @@ export class ReservasComponent implements OnInit {
   }
 
   listarReservas(fecha_seleccionada: any) {
-
     if(fecha_seleccionada) {
-      fecha_seleccionada = moment(fecha_seleccionada).format('YYYY-MM-DD');
+      fecha_seleccionada = moment(fecha_seleccionada).add(5,'h').format('YYYY-MM-DD');
     }
-
     let fecha: ReservaFilterModel = {
       fecha_reserva: fecha_seleccionada
     }
